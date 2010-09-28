@@ -1,0 +1,2 @@
+RewriteEngine off
+RemoveHandler .php .phtml .php3 .pl .perl .php5

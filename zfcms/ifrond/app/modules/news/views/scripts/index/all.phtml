@@ -1,0 +1,12 @@
+<h1>Сообщения пресс-службы</h1>
+<div style="width:470px;margin: 0 auto;padding:3px 0 10px 0; ">
+	<a href="http://eservice.ulgov.ru/feedback/"><img border="0" src="http://eservice.ulgov.ru/feedback/468gr.jpg"></a>
+</div>
+<?php
+echo $this->partial('/index/list.phtml', array('newsList' => $this->newsList));
+echo $this->partial('/index/pagination.phtml', array(
+	'pageAll' => $this->pageAll, 
+	'page' => $this->page,
+	'url' => '/news/')
+);
+?>

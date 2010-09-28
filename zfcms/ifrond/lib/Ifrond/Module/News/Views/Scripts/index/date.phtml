@@ -1,0 +1,7 @@
+<h1>Новости от <?php
+$date = new Zend_Date($this->date, 'ru_RU');
+echo $date->toString('d MMMM YYY');
+?></h1>
+<?php
+echo $this->partial('/index/list.phtml', array('newsList' => $this->newsList));
+?>

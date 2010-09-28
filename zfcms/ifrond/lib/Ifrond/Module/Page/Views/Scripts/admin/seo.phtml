@@ -1,0 +1,13 @@
+<script type="text/javascript">
+	$('#fpsTitle').val($('#fpeSeotitle').val());
+	$('#fpsDescription').val($('#fpeSeodescription').val());
+	$('#fpsKeywords').val($('#fpeSeokeywords').val());
+	$('#Page_Form_Seo').submit(function(event){
+		event.stopPropagation();
+		$('#fpeSeotitle').val($('#fpsTitle').val());
+		$('#fpeSeodescription').val($('#fpsDescription').val());
+		$('#fpeSeokeywords').val($('#fpsKeywords').val());
+		return false;
+		});
+</script>
+<?php echo $this->form; ?>

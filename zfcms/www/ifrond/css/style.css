@@ -1,0 +1,429 @@
+@charset "utf-8";
+@import "empty.css";
+@import "silk.css";
+@import "redmond/ui.css";
+
+body {
+	font-size: 12px;
+	color: #222;
+}
+
+a {
+	color: #2e6ca7;
+}
+
+a.ajax, span.ajax {
+	text-decoration: none;
+	border-bottom: 1px dashed #2e6ca7;
+	color: #2e6ca7;
+	cursor: pointer;
+}
+
+a.ajax:hover, span.ajax:hover {
+	border-bottom: 1px dashed black;
+}
+
+.autoheight, .autoheightInner {
+	overflow: auto;
+}
+
+#pageTreePanel {
+	float: left;
+	width: 25%;
+}
+
+#pageEditPanel {
+	float: left;
+	width: 75%;
+}
+
+.ifrondTree a.page {
+	text-decoration: none;
+	padding: 0 0 0 20px;
+	background: transparent url(images/silk/page_white_text.png) no-repeat 0 0;
+	float: left;	
+	font-size: 12px;		
+}
+
+.ifrondTree a.page:hover {
+	color: #2e6ca7;
+}
+
+.ifrondTree a.page.selected {
+	background-color: #d4ebff;
+}
+
+.ifrondTree li.cat > a.page {
+	background-image: url(images/silk/folder.png);
+}
+
+.ifrondTree li {
+	padding: 5px 0 5px 10px;	
+	line-height: 150%;
+	clear: both;
+}
+
+.ifrondTree li.cat {
+	padding-left: 0;
+	
+}
+
+.ifrondTree li ul {
+	margin: 3px 0 0 20px;
+	clear: both;
+}
+
+.ifrondTree li a.tgler {
+	padding: 5px;
+	background: white url(images/arr/l.gif) no-repeat 0 4px;
+	float: left;
+}
+
+.ifrondTree li a.tgler.active {
+	background-image: url(images/arr/d.gif);
+}
+
+.ifrondToolbar {
+	height: 16px;
+	padding: 5px;
+}
+
+.ifrondToolbar li {
+	float: left;
+	height: 16px;
+	overflow: hidden;
+	margin-right: 3px;
+	padding: 1px;	
+}
+
+.ifrondToolbar li.ico:hover {	
+	padding: 0;	
+	border: 1px solid orange;
+	background-color: #ffe4b5;
+}
+
+.ifrondToolbar li span {
+	cursor: pointer;
+}
+
+.ifrondForm p {
+	margin: 0 0 15px 0;
+}
+
+.ifrondForm .extra {
+	padding: 7px;
+	background-color: #E5EFFD;
+}
+
+.ifrondForm .noreq {
+	padding: 7px;
+	background-color: #eee;
+}
+
+.ifrondForm table.lyo td.ttl {
+	width: 100px;
+	text-align: right;
+	padding: 5px;
+}
+
+.ifrondForm table.lyo td.val {	
+	padding: 5px;
+}
+
+.ifrondForm input.error, 
+.ifrondForm select.error, 
+.ifrondForm textarea.error, 
+.ifrondForm label.error {
+	background-color: #ffff95;
+	border: 1px solid red;
+}
+
+.cpImageList li {
+	float: left;
+	margin: 5px;
+	border: 1px solid #C9D8EA;
+	cursor: pointer;
+	padding: 2px;
+	}
+	
+.cpImageList li img {
+	float: left;
+	}	
+
+.cpImageList li.ui-selected {
+	border-color: #E17009; 
+	}
+
+form.cpFormUpload {
+	padding: 5px;
+	background-color: #FFF0A5;	
+	border: 1px solid #FED22F;
+	}
+
+#fcfUpload {
+	/*border: none;*/	
+	}
+
+#cpFileUpload {
+	display: none;
+	}
+
+
+.cpFileList li {
+	margin: 5px;
+	border: 1px solid transparent;
+	cursor: pointer;
+	padding: 2px 2px 2px 22px;
+	background: transparent url(images/silk/application.png) no-repeat 2px 1px;
+	}
+
+.cpFileList li a {
+	color: blue;
+	text-decoration: none;
+	}
+
+.cpFileList li.ui-selected {
+	border-color: #E17009; 
+	font-weight: bold;
+	}
+
+
+ul.cpRefTemplateList li {
+	margin: 20px 5px;
+	font-size: 18px;
+	}
+
+ul.cpRefTemplateList li a {
+	border-bottom: 1px dashed black;
+	text-decoration: none;	
+	}
+
+ul.cpRefTemplateList li.active {
+	background-color: #2e6ca7;	 
+	}
+
+ul.cpRefTemplateList li.active a {
+	border-bottom: none;
+	color: white; 
+	}
+
+#refTemplatePanel {
+	float: left;
+	width: 25%;
+}
+
+#refListPanel {
+	float: left;
+	width: 75%;
+}
+
+#newsListPanel {
+	float: left;
+	width: 32%;
+	}
+
+#newsEditPanel {
+	float: left;
+	width: 66%;
+	padding-left: 2%;
+	}
+
+#refUlList {
+	
+	}
+	
+#refUlList li {
+	padding: 10px 20px;
+	border-top: 1px solid #ccc;
+	border-bottom: 1px solid #ccc;
+	background-color: white;
+	}
+
+#refUlList li div.ttl {
+	font-size: 18px;
+	margin-bottom: 10px;
+	}
+	
+#refUlList li div.ttl a.edit {
+	font-size: 11px;
+	margin-left: 20px;
+	display: none;
+	}
+	
+#refUlList li div.ttl a.delete {
+	font-size: 11px;
+	margin-left: 20px;
+	display: none;
+	}		
+
+#refUlList div.thumb {
+	float: left;
+	margin: 0 15px 10px 0;
+	}
+	
+#refUlList div.thumb div.img {
+	width: 100px;
+	height: 70px;
+	background-color: #ccc;
+	padding: 1px;
+	border: 1px solid #4297D7;
+	}	
+	
+#refUlList div.thumb img {
+	padding: 1px;
+	border: 1px solid #4297D7;
+	}	
+	
+#refUlList div.subtitle {
+	margin-bottom: 10px;
+	font-size: 14px;
+	font-style: italic;
+	}
+
+#refUlList div.extra {
+	width: 35%;
+	height: 25px;
+	overflow: hidden;
+	margin-right: 5%;
+	float: left;	
+	}	
+	
+#refUlList div.extra span.lbl {
+	font-weight: bold;	
+	}	
+	
+#Ref_Form_Edit {
+	display: none;
+	}	
+	
+#refUlList li form {
+	padding: 10px;
+	background-color: #E5F0F5;
+	}
+	
+#refUlList li.ui-selected {
+	background-color: #E5F0F5;
+	}	
+	
+#refUlList li.ui-selected form {
+	background-color: white;
+	}		
+	
+div.ui-widget-header .paging {
+	float: right;
+	font-size: 11px;
+	padding: 3px 3px 0 0;
+	}	
+	
+div.ui-widget-header .paging select {
+	width: 50px;
+	font-size: 10px;
+	}	
+	
+#newsAttImgList {
+	
+	}	
+	
+ul.cpNewsList li {
+	padding: 5px 0;
+	border-bottom: 1px solid #ABC6DD;
+	cursor: pointer;
+	}	
+	
+	
+ul.cpNewsList div.attribs {	
+	font-size: 11px;
+	padding-bottom: 3px;
+	}		
+	
+ul.cpNewsList span.topic {	
+	color: gray;	
+	}		
+	
+ul.cpNewsList span.date {	
+	font-weight: bold;
+	padding-right: 10px;
+	}	
+
+ul.cpNewsList div.ttl {	
+	font-size: 14px;
+	padding-bottom: 5px;	
+	}
+	
+ul.cpNewsList div.tags {	
+	font-size: 11px;
+	color: #ccc;
+	}	
+	
+ul.cpNewsList .ui-selecting { background: #E3E8F7; }
+ul.cpNewsList .ui-selected { background: #E5EFFD; }
+		
+#newsGallery {
+	max-height: 100px;
+	overflow: auto;
+	}	
+#News_Form_Gallery {
+	display: none;
+	position: absolute;
+	width: 700px;
+	}
+
+#blockListPanel {
+	float: left;
+	width: 25%;
+}
+
+#blockEditPanel {
+	float: left;
+	width: 72%;
+	padding-left: 3%;
+}
+
+#blockList li {
+	margin: 20px 5px;
+	font-size: 18px;
+	}
+
+#blockList li a {
+	border-bottom: 1px dashed black;
+	text-decoration: none;	
+	}
+
+#blockList li.active {
+	background-color: #2e6ca7;	 
+	}
+
+#blockList li.active a {
+	border-bottom: none;
+	color: white; 
+	}
+
+#Block_Form_Edit {
+	
+}
+
+#Block_Form_Edit dt {	
+	margin-top: 20px;	
+	margin-bottom: 5px;
+}
+
+#Block_Form_Edit dd {
+	border-bottom: 1px solid #ccc; 
+	padding-bottom: 15px;
+	margin-left: 0;
+}
+
+#Block_Form_Edit label {
+	font-size: 18px;	
+	font-weight: normal;
+}
+
+#Block_Form_Edit #save {
+	margin: 10px 0 0 0;
+}
+
+#Block_Form_Edit p.description {
+	margin-top: 5px;
+}
+
+

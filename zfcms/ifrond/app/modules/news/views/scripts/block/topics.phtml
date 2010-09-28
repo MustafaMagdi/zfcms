@@ -1,0 +1,24 @@
+<div id="topicsListWrap">
+	<div class="blockTitle">
+		<div class="left">
+			<div class="right">   			
+	   			Рубрики новостей
+			</div>
+		</div>
+	</div>
+	<div class="inner">
+		<ul class="bottomDotted">
+			<li><a href="/epress/">Электронный пресс-центр</a></li>
+<?php 
+$last = sizeof($this->topics);
+$i = 0;
+foreach ($this->topics as $t) {
+	$i++;
+	if ($last == $i) $class = ' class="last"';
+	else $class = '';
+	echo '<li'.$class.'><a href="/news/'.$t->extra1.'/">'.$t->title.'</a></li>';
+}
+?>			
+		</ul>
+	</div>
+</div>

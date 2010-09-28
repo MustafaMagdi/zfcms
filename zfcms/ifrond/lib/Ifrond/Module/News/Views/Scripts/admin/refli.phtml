@@ -1,0 +1,52 @@
+<?php
+$ref = $this->ref;
+$template = $this->template;
+
+
+echo '<li id="ref_'.$ref->id.'">
+			<div class="ttl">
+				'.$ref->title.' 
+				<a class="ajax edit" href="/ref/admin/getone/id/'.$ref->id.'/" rel="'.$ref->id.'">изменить</a>
+				<a class="ajax delete" href="/ref/admin/delete/id/'.$ref->id.'/" rel="'.$ref->id.'">удалить</a>
+			</div>
+			<div clas="params">';
+if ($template->thumb == 1) {
+	echo '<div class="thumb">';
+	if ($ref->thumb != '') {
+		$file = PATH_WEBROOT.$ref->thumb;
+		if (is_file($file)) {
+			$d = new Ifrond_Model_Thumb(PATH_WEBROOT.$ref->thumb);
+			$d->adaptiveResize(100, 70)->saveQuick();
+			echo $d->getImageAsTag();
+		}
+	} else {
+		echo '<div class="img"></div>';
+	}
+	echo '</div>';
+}
+if ($template->subtitle == 1) {
+	echo '<div class="subtitle">'.$ref->subtitle.'</div>';
+}
+if ($template->extra1 != '') {		
+	if ($ref->extra1 == '') $ref->extra1 = '<em>нет данных</em>';
+	echo '<div class="extra"><span class="lbl">'.$template->extra1.'</span>: '.$ref->extra1.'</div>';
+}
+if ($template->extra2 != '') {		
+	if ($ref->extra2 == '') $ref->extra2 = '<em>нет данных</em>';
+	echo '<div class="extra"><span class="lbl">'.$template->extra2.'</span>: '.$ref->extra2.'</div>';
+}
+if ($template->extra3 != '') {		
+	if ($ref->extra3 == '') $ref->extra3 = '<em>нет данных</em>';
+	echo '<div class="extra"><span class="lbl">'.$template->extra3.'</span>: '.$ref->extra3.'</div>';
+}
+if ($template->extra4 != '') {		
+	if ($ref->extra4 == '') $ref->extra4 = '<em>нет данных</em>';
+	echo '<div class="extra"><span class="lbl">'.$template->extra4.'</span>: '.$ref->extra4.'</div>';
+}
+
+echo '			</div>
+			<div class="clear"></div>
+		</li>';
+
+
+?>

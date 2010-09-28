@@ -1,0 +1,42 @@
+<form class="ifrondForm cpFormNews"	
+	action="<?php echo $this->escape($this->element->getAction()); ?>" 
+	method="<?php echo $this->escape($this->element->getMethod()); ?>"
+	id="<?php echo $this->escape($this->element->getAttrib('id')); ?>"
+	enctype="<?php echo $this->escape($this->element->getAttrib('enctype')); ?>" >
+	<p><?php echo $this->element->fneTitle; ?></p>	
+	<div class="extra" style="margin-bottom: 15px;" >	
+		<table class="lyo">
+				<tr>
+					<td class="lyo ttl">
+						<label for="fnePid"><?php echo $this->element->fnePid->getLabel(); ?>:</label>
+					</td>
+					<td class="lyo val"><?php echo $this->element->fnePid; ?></td>
+					<td class="lyo ttl">
+						<label for="fneDate"><?php echo $this->element->fneDate->getLabel(); ?>:</label>
+					</td>
+					<td class="lyo val">
+						<?php echo $this->element->fneDate; ?>						
+					</td>
+					<td class="lyo val">						
+						<?php echo $this->element->fneTime; ?>
+					</td>
+					<td class="lyo ttl">
+						<label for="fneTags"><?php echo $this->element->fneTags->getLabel(); ?>:</label>
+					</td>
+					<td class="lyo val"><?php echo $this->element->fneTags; ?></td>
+				</tr>
+			</table>	
+		
+	</div>	
+	<label for="fneSubtitle"><?php echo $this->element->fneSubtitle->getLabel();?>:</label><br>
+	<p><?php echo $this->element->fneSubtitle; ?></p>		
+	<?php echo $this->element->fneText; ?>	
+	
+	<p><?php echo $this->element->fneSave; ?></p>
+	<?php echo $this->element->fneId; ?>
+	<?php echo $this->element->fneRang; ?>	
+		
+	</form>
+	
+	
+	

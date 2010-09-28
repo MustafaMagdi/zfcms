@@ -1,0 +1,53 @@
+<div id="parentsPath"><a href="/">Главная страница</a> / <a
+	href="/news/">Новости</a> / <a
+	href="news/<?php echo $this->news->topic->extra1; ?>/"><?php echo $this->news->topic->title; ?></a>
+</div>
+<h1><?php echo clearStr(stripslashes($this->news->title)); ?></h1>
+<div class="pageExtras"><span class="date"><?php	
+$date = new Zend_Date(toFormatDate($this->news->date_event), 'ru_RU');
+echo $date->toString('d MMMM YYYY года, HH:mm');
+?></span> <?php
+if (!$this->print) {
+	?> <span class="print"><a
+	href="/news/index/permlink/id/<?php echo $this->news->id; ?>/util/print/">версия
+для печати</a></span> <span class="plink"><a
+	href="/news/index/permlink/id/<?php echo $this->news->id; ?>/">постоянная
+ссылка</a></span> <?php } ?></div>
+<?php
+$gallery = $this->news->getGallery(); 
+if (sizeof($gallery) > 0) {
+	echo '<div id="newsGallery">';	
+	$t = $gallery[0];
+	unset($gallery[0]);
+	$thumb = new Ifrond_Model_Thumb(PATH_WEBROOT.$t->path);
+	$thumb->adaptiveResize(350, 230)->saveQuick();	
+	$title = clearStr($t->title);
+	echo '<a target="_blank" class="lightbox main" title="'.$title.'" href="'.$t->path.'">'.$thumb->getImageAsTag(array('alt' => $title)).'</a>';
+	echo '<p class="ttl">'.$title.'</p>';
+	if (sizeof($gallery) > 0) {
+		echo '<div class="smalls">';
+		foreach ($gallery as $t) {
+			$thumb = new Ifrond_Model_Thumb(PATH_WEBROOT.$t->path);
+			$thumb->adaptiveResize(80, 50)->saveQuick();
+			$title = clearStr($t->title);
+			echo '<a target="_blank" class="lightbox" title="'.$title.'" href="'.$t->path.'">'.$thumb->getImageAsTag(array('alt' => $title)).'</a>';	
+		}
+		echo '</div>';
+	}
+	echo '</div>';
+	 
+}
+?>
+<h2><?php echo clearStr(stripslashes($this->news->subtitle)); ?></h2>
+<div class="typography"><?php echo trim(stripslashes($this->news->text)); ?></div>
+<div class="logDates">
+<p class="added">Добавлено: <?php	
+$date = new Zend_Date($this->news->date_add, 'ru_RU');
+echo $date->toString('d MMMM YYYY года, HH:mm');
+?></p>
+<?php
+if ($this->news->date_edit > $this->news->date_add) {
+	$date = new Zend_Date($this->news->date_edit, 'ru_RU');
+	?>
+<p class="added">Изменено: <?php echo $date->toString('d MMMM YYYY года, HH:mm');?></p>
+	<?php } ?></div>

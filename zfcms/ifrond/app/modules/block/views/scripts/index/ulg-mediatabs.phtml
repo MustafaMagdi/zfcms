@@ -1,0 +1,43 @@
+<?php 
+
+
+$photoXml = simplexml_load_file('http://photo.ulgov.com/feed/');
+$photoFeed = $photoXml->channel;
+$photoStr = '';
+foreach ($photoFeed->item as $t) {	
+	$title = clearStr($t->title);
+	$photoStr .= '<div class="item"><a href="'.$t->link.'" title="'.$title.'" ><img class="thumb" src="'.$t->description.'" alt="'.$title.'" /></a></div>';
+}
+	
+$videoXml = simplexml_load_file('http://morozov.ulgov.ru/feed/video/');
+$videoFeed = $videoXml->channel;
+$videoStr = '';
+$i = 0;
+foreach ($videoFeed->item as $t) {	
+	$i++;
+	if ($i < 4) {
+		$title = clearStr($t->title);
+		$videoStr .= '<div class="item"><a href="'.$t->link.'" title="'.$title.'" ><img height="147" class="thumb" src="'.$t->description.'" alt="'.$title.'" /></a></div>';
+	}
+}
+	
+
+?>
+<div class="blockTitle">
+	<div class="left">
+		<div class="right">
+			<span class="tab active" id="mediaTabs_photo">Фотоархив</span>
+			<span class="tab" id="mediaTabs_video">Видео</span>
+			<span class="tab" id="mediaTabs_live">Трансляция</span>											       
+		</div>
+	</div>
+</div> 
+
+<div class="tabInner">	
+	<div class="tabInn active" id="mediaTabs_photoInner" ><div class="pinfo"><?php echo $photoStr; ?></div></div>
+	<div class="tabInn" id="mediaTabs_videoInner" ><div class="pinfo"><?php echo $videoStr; ?></div></div>
+	<div class="tabInn" id="mediaTabs_liveInner" >
+		<a href="http://my.ul.vt.ru/cam/VTcam-1.php"><img width="180" height="147" src="http://webcam.mv.ru/pic/VTcam-1.jpg" name="VTcam1" Alt="Web Cam" Border=1 /></a>
+			<a href="http://my.ul.vt.ru/cam/VTcam-2.php"><img width="180" height="147" src="http://webcam.mv.ru/pic/VTcam-2.jpg" name="VTcam2" Alt="Web Cam" Border=1 /></a>
+	</div>	
+</div>

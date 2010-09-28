@@ -1,8 +1,0 @@
-<?php 
-echo $this->partial('/subscribe/letter-head-do.phtml');
-$url = 'http://new.ulgov.ru/news/subscribe/confirm/k/'.$this->subscribe->id.'_'.$this->subscribe->keycode.'/a/un/';
-?>
-<p>Вы запросили удаление вашего адреса электронной почты <strong><?php echo $this->subscribe->email; ?></strong> из списка рассылки.</p> 
-<p>Чтобы подтвердить это действие, пожалуйста, пройдите по следующей ссылке</p>  
-<p><strong><a href="<?php echo $url; ?>">Подтвердить удаление вашего адреса из списка рассылки</a></strong></p>
-<p><?php echo $url; ?></p>

@@ -1,8 +1,0 @@
-<?php 
-echo $this->partial('/subscribe/letter-head-do.phtml');
-$url = 'http://new.ulgov.ru/news/subscribe/confirm/k/'.$this->subscribe->id.'_'.$this->subscribe->keycode.'/';
-?>
-<p>Спасибо за Вашу подписку на рассылку сообщений пресс-службы Губернатора и Правительства Ульяновской области.</p> 
-<p>Для завершения Вашей подписки, пожалуйста, пройдите по следующей ссылке</p>  
-<p><strong><a href="<?php echo $url; ?>">Подтвердить подписку</a></strong></p>
-<p><?php echo $url; ?></p>

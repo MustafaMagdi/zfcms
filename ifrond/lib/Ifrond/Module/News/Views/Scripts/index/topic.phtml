@@ -1,9 +1,0 @@
-<h1><?php echo $this->topic->title; ?></h1>
-<?php
-echo $this->partial('/index/list.phtml', array('newsList' => $this->newsList));
-echo $this->partial('/index/pagination.phtml', array(
-	'pageAll' => $this->pageAll, 
-	'page' => $this->page,
-	'url' => '/news/'.$this->topic->extra1.'/')
-);
-?>

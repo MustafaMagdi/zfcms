@@ -1,8 +1,0 @@
-<?php
-$result = array();
-$result['news'] = $this->partial('/admin/newslist.phtml', array('news' => $this->news));
-$result['page'] = $this->pageCurrent;
-$result['msg'] = $this->msg;
-$result['pageSelect'] = $this->partial('/admin/pageselect.phtml', array('max' => $this->pageCount, 'current' => $this->pageCurrent));
-echo $this->json($result); 
-?>

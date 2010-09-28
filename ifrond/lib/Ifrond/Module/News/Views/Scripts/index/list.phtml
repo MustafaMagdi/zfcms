@@ -1,0 +1,37 @@
+<?php 
+$newsCount = sizeof($this->newsList);
+if ($newsCount > 0) { 
+	echo '<ul class="newsList bottomDotted">';
+	$i = 0;
+	foreach ($this->newsList as $t) {
+		$i++;
+		$t->extend();
+		$gallery = $t->getGallery();
+		if (sizeof($gallery) > 0) {
+			$photos = '<span class="photos">'.sizeof($gallery).' фото</span>';
+		} else {
+			$photos = '';
+		}
+		$date = new Zend_Date($t->date_event, 'ru_RU');
+		$url = '/news/'.$t->topic->extra1.'/'.$date->toString('YYYYMMdd').'/'.$t->id.'/';
+		if ($i == $newsCount) {
+			$liClass = ' class="last"';
+		} else {
+			$liClass = '';
+		}
+		echo '<li'.$liClass.'>
+			<p class="ttl"><a href="'.$url.'">'.clearStr(stripslashes($t->title)).'</a></p>
+			<p class="date">'.$date->toString('d MMMM YYYY, HH:mm').'</p>
+			<p class="subttl">'.clearStr(stripslashes($t->subtitle)).'</p>
+			<p class="extraInfo">
+   				<span class="topic">Рубрика: <a href="/news/'.$t->topic->extra1.'/">'.$t->topic->title.'</a></span>
+   				'.$photos.'   												
+   			</p>			
+		</li>';
+	}  
+	echo '</ul>';  
+} else {
+	echo '<em>нет новостей</em>';
+}
+
+?>

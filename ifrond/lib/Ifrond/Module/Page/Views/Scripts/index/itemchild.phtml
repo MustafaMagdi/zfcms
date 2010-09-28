@@ -1,0 +1,17 @@
+<?php
+
+echo '<ul class="pageList">';
+foreach ($this->childs as $t) {
+	if ($t->is_cat == 0) {
+        $urlPostfix = '.html';
+        $class = '';
+    } else {
+        $urlPostfix = '/';
+        $class = ' class="cat"';
+    }
+    echo '<li'.$class.'>
+    		<a href="' . $this->baseURL . $t->shortcut . $urlPostfix . '" title="' . $t->subtitle . '">' . $t->title . '</a>
+   		</li>';
+}
+echo '</ul>';
+?>

@@ -1,0 +1,17 @@
+<h1>Добро пожаловать на Карту Ульяновска</h1>
+<p>Вы почти уже зарегистрировались на сайте <a href="http://ulmap.ru/">Карта Ульяновска</a></p>
+<p>Пройдите по ссылке http://<?php echo $_SERVER['SERVER_NAME'];?>/user/index/confirm/code/<?php echo $this->values['register_code'];?>, чтобы завершить регистрацию</p>
+<table>
+	<tbody>
+		<tr>
+			<td>Ваш логин</td>
+			<td><?php echo $this->values['username'];?></td>
+		</tr>
+		<tr>
+			<td>Ваш пароль</td>
+			<td><?php echo $this->values['password'];?></td>
+		</tr>
+	</tbody>
+</table>
+
+

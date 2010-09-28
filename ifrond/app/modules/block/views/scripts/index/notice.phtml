@@ -1,0 +1,21 @@
+<?php 
+$list = $this->block['list'];
+$list = str_replace(array('<p>', '</p>'), array('<li>', '</li>'), $list);
+?>	
+	
+	<div id="noticeList" >
+   		<div class="blockTitle">
+   			<div class="left">
+   				<div class="right">Объявления</div>
+   			</div>
+   		</div>
+   		<div id="noticeWrap">
+   			<ul class="bottomDotted" id="scroller"><?php echo $list; ?></ul>
+   		</div>
+   		<div class="blueBox" >
+   			<div class="bl" ><div class="br" >
+   				<a href="/notice/actual/" class="more">все объявления</a>
+   				<div class="clear"></div>
+   			</div></div>
+   		</div>   							   
+   	</div>

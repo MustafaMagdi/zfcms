@@ -1,0 +1,26 @@
+						<div id="memoryDates">
+   							<div class="blockTitle red">
+   								<div class="left">
+   									<div class="right">Памятные даты</div>
+   								</div>
+   							</div>
+   							<ul class="bottomDotted">
+<?php 
+
+$lastNum = sizeof($this->news);
+$i = 0;
+foreach ($this->news as $t) {	
+	$date = new Zend_Date();
+	$i++;
+	$date->set(toFormatDate($t->date_event));	
+	if ($lastNum == $i) $class = ' class="last"';
+	else $class = '';
+	echo '<li'.$class.'>
+   			<div class="date">'.$date->get(Zend_Date::DAY_SHORT).' '.toMonthRu($date->get(Zend_Date::MONTH_SHORT)).'</div>
+   			<a href="/news/rdates/'.$date->toString('YYYYMMdd').'/'.$t->id.'/">'.$t->title.'</a>
+   		</li>';
+}
+
+?>
+ 							</ul>
+   						</div>

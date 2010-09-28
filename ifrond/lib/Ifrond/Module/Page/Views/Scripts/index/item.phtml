@@ -1,0 +1,39 @@
+<?php
+if ($this->parents !== false && sizeof($this->parents) > 0) {
+	echo $this->partial('/index/parents.phtml', array(
+    	'parents' => $this->parents,    
+    	'baseURL' => $this->baseURL)
+	);
+}
+if ($this->page->subtitle != '') $subtitle = '<h2>'.$this->page->subtitle.'</h2>';
+else $subtitle = '';
+echo '<h1>'.$this->page->title.'</h1>';
+echo '<div class="pageExtras">';
+if (!$this->print) {
+	echo '<span class="print"><a href="/page/index/permlink/id/'.$this->page->id.'/util/print/">версия для печати</a></span>
+			<span class="plink"><a href="/page/index/permlink/id/'.$this->page->id.'/">постоянная ссылка</a></span>';
+}
+echo '</div>';
+echo $subtitle;
+echo '<div class="typography">'.$this->page->text.'</div>';
+
+echo '<div class="logDates"><p class="added">Добавлено: ';
+$date = new Zend_Date($this->page->date_add, 'ru_RU');
+echo $date->toString('d MMMM YYYY года');
+$hoursAndMinutes = $date->toString('HH:mm');
+if ($hoursAndMinutes != '00:00') echo ', '.$hoursAndMinutes;
+echo '</p>';
+if ($this->page->date_edit > $this->page->date_add) {
+	$date = new Zend_Date($this->page->date_edit, 'ru_RU');
+	echo '<p class="added">Изменено: '.$date->toString('d MMMM YYYY года, HH:mm').'</p>';
+}
+echo '</div>';
+
+if (sizeof($this->childs) > 0) {
+	echo $this->partial('/index/itemchild.phtml', array(
+    	'childs' => $this->childs,    
+    	'baseURL' => $this->baseURL)
+	);
+}
+
+?>

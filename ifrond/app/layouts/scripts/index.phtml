@@ -1,0 +1,95 @@
+<?= $this->doctype() ?>
+<html>
+<head>
+	<?= $this->headTitle() ?>    
+	<?= $this->headLink() ?>    
+	<?= $this->headMeta() ?>	
+	<?= $this->headScript() ?>
+</head>
+<body>
+	<div id="bgPage">
+   	<div class="centered">
+   		<div id="header">
+   			<a href="/" id="logoHead">&nbsp;</a> 	
+   			<div class="titles">
+   				<?php echo $this->action('include', 'index', 'block', array('script' => 'ulg-titles')); ?>   				
+   			</div>
+   			<div class="utils" >
+   				<?php echo $this->action('include', 'index', 'block', array('script' => 'ulg-searcher')); ?>
+   				<?php echo $this->action('include', 'index', 'block', array('script' => 'ulg-flags')); ?>
+   				<?php echo $this->action('include', 'index', 'block', array('script' => 'ulg-topicos')); ?>   				
+   			</div>   			   			
+      	</div>      	
+      	<div id="mainMenu">
+      		<?php echo $this->action('include', 'index', 'block', array('script' => 'ulg-mainmenu')); ?>
+      	</div>
+      	<table class="lyo" id="carcas">
+      		<tbody>
+   				<tr>
+   					<td class="lyo extra" >
+   						<?php echo $this->action('include', 'index', 'block', array('script' => 'ulg-leftmenu')); ?>
+   						<?php echo $this->action('memorydates', 'block', 'news', array('limit' => 2)); ?>
+   						<?php echo $this->action('include', 'index', 'block', array('script' => 'ulg-flashmap')); ?>
+   						<div class="blueBox" id="linkTapeWrap">
+   							<div class="tl" ><div class="tr" ><div class="bl" ><div class="br" >
+   								<?php echo $this->action('include', 'index', 'block', array('script' => 'ulg-linktape')); ?>									   											
+							</div></div></div></div>
+   						</div>
+   						<div id="analitics">
+   							<?php echo $this->action('analitics', 'block', 'page', array('limit' => 4)); ?>   														
+   						</div>   						
+   						<div class="pinfo" id="pinfoWrap" >
+   							<?php echo $this->action('include', 'index', 'block', array('script' => 'ulg-pinfoleft')); ?>								
+						</div>   						
+   					</td> 
+   					<td class="lyo main" >
+   						<div id="mainNews">
+   							<?php echo $this->action('important', 'block', 'news'); ?>   							
+   							<div class="clear"></div>
+   						</div>
+   						<div id="newsTape">
+   							<?php echo $this->action('tape', 'block', 'news', array('limit' => 15)); ?>   							
+   							<div class="extras">   	
+   								<?php echo $this->action('calendar', 'block', 'news'); ?>
+   								<?php echo $this->action('include', 'index', 'block', array('script' => 'ulg-anons')); ?>	
+   								<?php echo $this->action('include', 'index', 'block', array('script' => 'ulg-subscribe')); ?>
+   								<?php echo $this->action('include', 'index', 'block', array('script' => 'ulg-hotlines')); ?>
+								<?php echo $this->action('getone', 'index', 'block', array('name' => 'notice')); ?>
+								<?php echo $this->action('lasts', 'block', 'page', array('limit' => '5')); ?>
+								<?php echo $this->action('include', 'index', 'block', array('script' => 'ulg-pinforight')); ?>
+   							</div>			
+   							<div class="clear"></div>
+   						</div>   						
+   						<div id="mediaTabs">
+   							<?php echo $this->action('include', 'index', 'block', array('script' => 'ulg-mediatabs')); ?>   						
+   						</div>   						
+   					</td>
+   				</tr>
+   			</tbody>
+      	</table>      	
+      	<div id="partners" >
+      		<?php echo $this->action('include', 'index', 'block', array('script' => 'ulg-partners')); ?>
+      	</div>      	
+      </div>
+	   <div id="footer" >
+	   	<div class="centered">
+	      	<table class="lyo">
+	      		<tbody>
+	      			<tr>
+	      				<td class="lyo footmenu">
+	      					<?php echo $this->action('include', 'index', 'block', array('script' => 'ulg-footmenu')); ?>
+	      				</td>
+	      				<td class="lyo contacts">
+	      					<?php echo $this->action('include', 'index', 'block', array('script' => 'ulg-footcontacts')); ?>
+	      				</td>
+	      				<td class="lyo about">
+	      					<?php echo $this->action('include', 'index', 'block', array('script' => 'ulg-footabout')); ?>
+	      				</td>
+	      			</tr>
+	      		</tbody>
+	      	</table>
+	      </div>
+		</div>      	
+   </div>
+</body>
+</html>

@@ -1,0 +1,217 @@
+<form 
+	action="<?php echo $this->escape($this->element->getAction()); ?>" 
+	method="<?php echo $this->escape($this->element->getMethod()); ?>"
+	id="<?php echo $this->escape($this->element->getAttrib('id')); ?>"	
+	enctype="<?php echo $this->escape($this->element->getAttrib('enctype')); ?>" >
+	<p class="subFormTtl">Укажите, пожалуйста, некоторую информацию о себе</p>
+	<table class="lyo">
+		<tbody>
+			<tr class="even">
+				<td class="lyo ttl">
+					<strong><?php echo $this->element->person_family->getLabel(); ?></strong>
+				</td>
+				<td class="lyo val">
+					<?php echo $this->element->person_family; ?>
+				</td>
+			</tr>
+			<tr>
+				<td class="lyo ttl">
+					<strong><?php echo $this->element->person_name->getLabel(); ?></strong>
+				</td>
+				<td class="lyo val">
+					<?php echo $this->element->person_name; ?>
+				</td>
+			</tr>
+			<tr class="even">
+				<td class="lyo ttl">
+					<?php echo $this->element->person_secondname->getLabel(); ?>					
+				</td>
+				<td class="lyo val">
+					<?php echo $this->element->person_secondname; ?>
+				</td>
+			</tr>
+			<tr>
+				<td class="lyo ttl">
+					<?php echo $this->element->person_occupation->getLabel(); ?>					
+				</td>
+				<td class="lyo val">
+					<?php echo $this->element->person_occupation; ?>
+				</td>
+			</tr>
+			<tr class="even">
+				<td class="lyo ttl">
+					<?php echo $this->element->person_privilege->getLabel(); ?>					
+				</td>
+				<td class="lyo val">
+					<?php echo $this->element->person_privilege; ?>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+	<p class="subFormTtl">Контактные данные</p>
+	<table class="lyo">
+		<tbody>
+			<tr class="even">
+				<td class="lyo ttl">
+					<strong><?php echo $this->element->address_index->getLabel(); ?></strong>					
+				</td>
+				<td class="lyo val">
+					<?php echo $this->element->address_index; ?>
+				</td>
+			</tr>
+			<tr>
+				<td class="lyo ttl">
+					<?php echo $this->element->address_region->getLabel(); ?>
+				</td>
+				<td class="lyo val">
+					<?php echo $this->element->address_region; ?>
+				</td>
+			</tr>
+			<tr class="even">
+				<td class="lyo ttl">
+					<?php echo $this->element->address_district->getLabel(); ?>					
+				</td>
+				<td class="lyo val">
+					<?php echo $this->element->address_district; ?>
+				</td>
+			</tr>
+			<tr>
+				<td class="lyo ttl">
+					<strong><?php echo $this->element->address_address->getLabel(); ?></strong>
+				</td>
+				<td class="lyo val">
+					<?php echo $this->element->address_address; ?>
+				</td>
+			</tr>
+			<tr class="even">
+				<td class="lyo ttl">
+					<strong><?php echo $this->element->connection_email->getLabel(); ?></strong>					
+				</td>
+				<td class="lyo val">
+					<?php echo $this->element->connection_email; ?>
+				</td>
+			</tr>
+			<tr>
+				<td class="lyo ttl">
+					<?php echo $this->element->connection_phone->getLabel(); ?>					
+				</td>
+				<td class="lyo val">
+					<?php echo $this->element->connection_phone; ?>
+				</td>
+			</tr>
+			<tr class="even">
+				<td class="lyo ttl">
+					<?php echo $this->element->connection_fax->getLabel(); ?>					
+				</td>
+				<td class="lyo val">
+					<?php echo $this->element->connection_fax; ?>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+	<p class="subFormTtl">В какие органы государственной власти Вы уже обращались с данным вопросом? </p>
+	<table class="lyo">
+		<tbody>
+			<tr class="even">
+				<td class="lyo ttl">
+					<?php echo $this->element->power_federal->getLabel(); ?>					
+				</td>
+				<td class="lyo val">
+					<?php echo $this->element->power_federal; ?>
+				</td>
+			</tr>
+			<tr>
+				<td class="lyo ttl">
+					<?php echo $this->element->power_federaldate->getLabel(); ?>					
+				</td>
+				<td class="lyo val">
+					<?php echo $this->element->power_federaldate; ?>
+				</td>
+			</tr>
+			<tr class="even">
+				<td class="lyo ttl">
+					<?php echo $this->element->power_local->getLabel(); ?>					
+				</td>
+				<td class="lyo val">
+					<?php echo $this->element->power_local; ?>
+				</td>
+			</tr>
+			<tr>
+				<td class="lyo ttl">
+					<?php echo $this->element->power_localdate->getLabel(); ?>					
+				</td>
+				<td class="lyo val">
+					<?php echo $this->element->power_localdate; ?>
+				</td>
+			</tr>
+			<tr class="even">
+				<td class="lyo ttl">
+					<?php echo $this->element->power_other->getLabel(); ?>					
+				</td>
+				<td class="lyo val">
+					<?php echo $this->element->power_other; ?>
+				</td>
+			</tr>
+			<tr>
+				<td class="lyo ttl">
+					<?php echo $this->element->power_otherdate->getLabel(); ?>					
+				</td>
+				<td class="lyo val">
+					<?php echo $this->element->power_otherdate; ?>
+				</td>
+			</tr>			
+		</tbody>
+	</table>	
+	<p class="subFormTtl">Ваше обращение</p>
+	<table class="lyo">
+		<tbody>
+			<tr class="even">
+				<td class="lyo ttl">
+					<?php echo $this->element->msg_topic->getLabel(); ?>					
+				</td>
+				<td class="lyo val">
+					<?php echo $this->element->msg_topic; ?>
+				</td>
+			</tr>
+			<tr>
+				<td class="lyo ttl">
+					<strong><?php echo $this->element->msg_msg->getLabel(); ?></strong>
+				</td>
+				<td class="lyo val">
+					<?php echo $this->element->msg_msg; ?>
+				</td>
+			</tr>			
+		</tbody>
+	</table>
+	<p class="subFormTtl">Прикрепленные файлы</p>
+	<table class="lyo">
+		<tbody>
+			<tr class="even">
+				<td class="lyo ttl" style="text-align:left;">					
+							Максимальный размер: <strong>3Mb</strong>.<br /><br />
+							Допустимые форматы: <br /><strong>rtf, doc, docx, rtf, odf, txt, 
+										 mp3, avi, jpeg, jpg, png, gif,
+										 zip, rar, gz, tgz, xls, xlsx,
+										 mp4, mov</strong>
+				</td>
+				<td class="lyo val">
+					<p><?php echo $this->element->att_files_1; ?></p>
+					<p><?php echo $this->element->att_files_2; ?></p>
+					<p><?php echo $this->element->att_files_3; ?></p>
+					<p><?php echo $this->element->att_files_4; ?></p>
+					<p><?php echo $this->element->att_files_5; ?></p>
+				</td>
+			</tr>
+			<tr>
+				<td class="lyo ttl">					
+				</td>
+				<td class="lyo val">
+					<?php echo $this->element->save; ?>
+				</td>
+			</tr>	
+		</tbody>
+	</table>
+</form>
+	
+	
+	

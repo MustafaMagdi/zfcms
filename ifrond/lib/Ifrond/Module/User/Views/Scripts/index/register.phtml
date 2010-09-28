@@ -1,0 +1,13 @@
+<?php if ($this->registered): ?>
+	<h1>Поздравляем, Вы почти зарегистрировались</h1>
+	<p>На вашу электронную почту <?php echo $this->values['email'] ?> оправлено письмо с подтверждением.</p>
+	<p>Пожалуйста, следуйте инструкциям в письме и никто не пострадает.</p>
+<?php else: ?>
+<h1><?php 
+	echo $this->registerForm->getAttrib('title'); 
+?></h1>
+<?php
+if ($this->error != '') echo '<div class="error">'.$this->error.'</div>'; 
+echo $this->registerForm; 
+endif;
+?>

@@ -1,0 +1,45 @@
+<h1>Поиск по сайту</h1>
+<?php 
+
+function searchLi($t) {	
+	$moduleNames = array('news' => 'Новости', 'page' => 'Раздел сайта');
+	$date = new Zend_Date($t['ordered'], 'ru_RU');
+	
+	$str = '<li>
+		<div class="date">'.$date->toString('dd MMMM YYYY').' / '.$moduleNames[$t['tablename']].'</div>
+		<a href="/'.$t['tablename'].'/index/permlink/id/'.$t['id'].'/">'.$t['title'].'</a>';
+	if ($t['subtitle'] != '') $str .= '<p>'.$t['subtitle'].'</p>';
+	$str .= '</li>';
+	return $str;
+}
+
+echo $this->form;
+if ($this->showResults) {
+	if (sizeof($this->results) > 0) {
+		echo '<h2>Результаты поиска</h2>
+		<ul id="searchList" class="bottomDotted">';
+		foreach ($this->results as $t) {
+			echo searchLi($t);
+		}
+		echo '</ul>';
+		if ($this->pages > 1) {
+			echo '<div id="paginator">Страница: ';
+			$urlParts = array();
+			foreach ($this->query as $k => $t) {
+				$urlParts[] = $k.'='.$t;
+			}
+			$urlPrefix = implode('&', $urlParts);
+			for ($i = 1; $i <= $this->pages; $i++) {
+				if ($this->currentPage == $i) {
+					echo ' <strong>'.$i.'</strong> ';
+				} else {
+					echo ' <a href="?'.$urlPrefix.'&page='.$i.'">'.$i.'</a> ';
+				}
+			}
+			echo '</div>';
+		}
+	} else {
+		echo '<em>поиск не дал результата</em>';
+	}
+}
+?>

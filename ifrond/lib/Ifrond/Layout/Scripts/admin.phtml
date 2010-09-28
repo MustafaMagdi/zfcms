@@ -1,0 +1,22 @@
+<?php 
+$this->headTitle('Панель управления Ifrond', 'PREPEND');
+$this->headTitle()->setSeparator(' :: ');
+$this->headLink()->appendStylesheet('/ifrond/css/style.css', 'all');
+$this->headScript()->appendFile('/ifrond/js/jquery/self.js');
+$this->headScript()->appendFile('/ifrond/js/jquery/ui.js');
+$this->headScript()->appendFile('/ifrond/js/jquery/plugins.js');
+?>
+<?php echo $this->doctype() ?>
+<html>
+<head>
+	<?php echo  $this->headTitle() ?>    
+	<?php echo  $this->headLink() ?>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+	<?php echo  $this->headScript() ?>
+</head>
+<body>
+	<div class="standAlone">
+		<?php echo $this->layout()->content; ?>
+	</div>
+</body>
+</html>

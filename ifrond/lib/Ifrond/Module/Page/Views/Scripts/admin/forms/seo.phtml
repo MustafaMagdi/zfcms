@@ -1,0 +1,40 @@
+<form class="ifrondForm"	
+	action="<?php echo $this->escape($this->element->getAction()); ?>" 
+	method="<?php echo $this->escape($this->element->getMethod()); ?>"
+	id="<?php echo $this->escape($this->element->getAttrib('id')); ?>" >
+		
+			<table class="lyo">
+				<tr>
+					<td class="lyo ttl">
+						<label for="fpsTitle"><?php echo $this->element->fpsTitle->getLabel(); ?>:</label>
+					</td>
+					<td class="lyo val">						
+						<?php echo $this->element->fpsTitle; ?>		
+					</td>
+				</tr>
+				<tr>
+					<td class="lyo ttl">
+						<label for="fpsDescription"><?php echo $this->element->fpsDescription->getLabel(); ?>:</label>
+					</td>
+					<td class="lyo val">						
+						<?php echo $this->element->fpsDescription; ?>		
+					</td>
+				</tr>
+				<tr>
+					<td class="lyo ttl">
+						<label for="fpsKeywords"><?php echo $this->element->fpsKeywords->getLabel(); ?>:</label>
+					</td>
+					<td class="lyo val">
+						
+						<?php echo $this->element->fpsKeywords; ?>		
+					</td>
+				</tr>				
+				<tr>
+					<td class="lyo ttl">
+					</td>
+					<td class="lyo val">									
+						<?php echo $this->element->fpsSubmit; ?>		
+					</td>
+				</tr>				
+			</table>
+	</form>

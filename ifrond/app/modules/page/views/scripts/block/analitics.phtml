@@ -1,0 +1,26 @@
+							<div class="blockTitle">
+   								<div class="left">
+   									<div class="right">Аналитика</div>
+   								</div>
+   							</div>
+   							<ul class="bottomDotted">
+<?php 
+
+$lastChildNum = sizeof($this->childs);
+$i = 0;
+foreach ($this->childs as $t) {
+	$i++;
+	if ($i == $lastChildNum) $class = ' class="last"';
+	else $class = '';
+	echo '<li'.$class.'><a href="/gov/ser/'.$t->shortcut.'/">'.$t->title.'</a></li>';
+}
+
+?>   							
+
+   							</ul>
+   							<div class="blueBox" >
+   								<div class="bl" ><div class="br" >
+   									<a href="/gov/ser/" class="more">весь раздел</a>
+   									<div class="clear"></div>
+   								</div></div>
+   							</div>   

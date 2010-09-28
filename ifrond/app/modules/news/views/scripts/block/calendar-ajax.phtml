@@ -1,0 +1,28 @@
+<?php 
+
+$newCal = new Ifrond_Model_Calendar ();
+
+foreach ( $this->activeDates as $t ) {
+	$newCal->setLinkForDate('/news/index/date/x/' . $t->p . '/', $t->p);
+}
+
+$result = array();
+
+$newCal->setShowTbodyOnly(true);
+$calBody = $newCal->getMonthCalendar ($this->month, $this->year);
+$nextMonth = $newCal->getNextMonth($this->month, $this->year);
+$prevMonth = $newCal->getPrevMonth($this->month, $this->year);
+if ($calBody !== false) {
+	$result['result'] = true;
+	$result['cal'] = $calBody;
+	$result['month'] = $newCal->getMonthTitle($this->month).', '.$this->year;
+	$result['prev'] = '/news/block/calendar/year/'.$prevMonth['year'].'/month/'.$prevMonth['month'].'/';	
+	$result['next'] = '/news/block/calendar/year/'.$nextMonth['year'].'/month/'.$nextMonth['month'].'/';;
+} else {
+	$result['result'] = false;
+	echo 'Неверный формат запроса';
+}
+
+echo $this->json($result);
+
+?>

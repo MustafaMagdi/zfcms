@@ -1,0 +1,20 @@
+<?php
+
+echo $this->form;
+
+?>
+<script type="text/javascript">
+
+$('#News_Form_Filter').submit(function(evt){
+	evt.stopPropagation();	
+	form = $(this);	
+	newsFilter = form.serializeObject();
+	newsFilter.fnfPage = $('#newsPage').val();
+	updateNewsList();
+	return false;
+});
+
+$("#fnfStart").datepicker();	
+$("#fnfEnd").datepicker();
+
+</script>

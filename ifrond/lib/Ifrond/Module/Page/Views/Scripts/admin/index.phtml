@@ -1,0 +1,17 @@
+<script type="text/javascript" src="/ifrond/js/modules/page/index.js"></script>
+<div id="pageTreePanel">
+	<div class="ui-widget-header ui-corner-all" >
+		<ul class="ifrondToolbar" >
+			<li><span id="pageAdd" class="ss_sprite ss_page_white_add">&nbsp;</span></li>
+			<li><span id="pageEdit" class="ss_sprite ss_page_white_edit">&nbsp;</span></li>
+			<li><span id="pageDelete" class="ss_sprite ss_cross">&nbsp;</span></li>
+		</ul>
+	</div>
+	<div class="autoheightInner ifrondTree" id="pageTree">
+		<?php echo $this->action('childs', 'admin', 'page', array('pid' => 0)); ?>
+	</div>
+</div>
+<div id="pageEditPanel" class="autoheight">
+	<?php echo $this->action('edit', 'admin', 'page', array('id' => 0)); ?>	
+</div>
+<div class="clear"></div>
